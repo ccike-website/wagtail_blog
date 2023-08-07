@@ -2,11 +2,11 @@ from django.conf import settings
 from django.db import models
 from django.db.models import Q
 from django.utils.translation import gettext_lazy as _
-from wagtail.admin.edit_handlers import (
-    FieldPanel, InlinePanel, MultiFieldPanel, FieldRowPanel)
+from wagtail.admin.panels import (
+    FieldPanel, InlinePanel, MultiFieldPanel, FieldRowPanel, TitleFieldPanel)
 from wagtail.api import APIField
-from wagtail.core.models import Page
-from wagtail.core.fields import RichTextField
+from wagtail.models import Page
+from wagtail.fields import RichTextField
 from wagtail.images import get_image_model_string
 from wagtail.search import index
 from modelcluster.fields import ParentalKey, ParentalManyToManyField
@@ -165,7 +165,7 @@ class BlogPageAbstract(Page):
     
     api_fields = [APIField('body')]
     content_panels = [
-        FieldPanel('title', classname="full title"),
+        TitleFieldPanel('title', classname="full title"),
         MultiFieldPanel([
             FieldPanel('tags'),
             FieldPanel('blog_categories'),
