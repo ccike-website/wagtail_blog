@@ -20,9 +20,9 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.11"
 Django = "^4.2"
-wagtail = "^5"
+wagtail = "^6"
 requests = "*"
 lxml = "*"
 
